@@ -5,6 +5,7 @@ import (
 	"regexp"
 )
 
+// Letter represents a letter count
 type Letters struct {
 	Count int
 }
@@ -13,6 +14,7 @@ func (l Letters) String() string {
 	return fmt.Sprintf("Letters: %d", l.Count)
 }
 
+// LetterCounter is a process that counts letters in a string
 func LetterCounter(sentences <-chan string) <-chan fmt.Stringer {
 	count := make(chan fmt.Stringer)
 

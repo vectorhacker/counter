@@ -10,8 +10,8 @@ func run(in <-chan string) <-chan struct{} {
 	letters := counter.LetterCounter(out1)
 	words := counter.WordCounter(out2)
 
-	j := counter.Join(letters, words)
-	return counter.Printer(j)
+	join := counter.Joiner(letters, words)
+	return counter.Printer(join)
 }
 
 func main() {

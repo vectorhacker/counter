@@ -1,5 +1,6 @@
 package counter
 
+// Spliter copies a string to two channels
 func Spliter(sentences <-chan string) (<-chan string, <-chan string) {
 	out1, out2 := make(chan string), make(chan string)
 

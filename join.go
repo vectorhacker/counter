@@ -5,7 +5,8 @@ import (
 	"sync"
 )
 
-func Join(channels ...<-chan fmt.Stringer) <-chan fmt.Stringer {
+// Joiner joins two or more Stringer channels into a single Stringer channel
+func Joiner(channels ...<-chan fmt.Stringer) <-chan fmt.Stringer {
 	join := make(chan fmt.Stringer)
 
 	wg := sync.WaitGroup{}
